@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flappy Bird</title>
-</head>
-<body>
-  <canvas id="canvas"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="title-game">
+        <span class="title-game__fill">Flappy Bird</span>
+        <span class="title-game__complete">Flappy Bird</span>
+      </header>
 
-  <script src="./index.js"></script>
-</body>
+      <fieldset class="sound-checkbox">
+        <label for="sound-on">Sound on</label>
+        <input type="checkbox" id="sound-on" name="sound-on" checked />
+      </fieldset>
+
+      <canvas id="canvas"></canvas>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
