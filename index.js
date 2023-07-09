@@ -1,6 +1,4 @@
 // Initial vars
-const DEV_MODE = true;
-
 const ctx = document.getElementById("canvas").getContext("2d");
 
 let canvasWidth = 300;
@@ -93,12 +91,11 @@ function loop() {
 
     // Collisions
     if (
-      (!DEV_MODE &&
-        character.x + bird.width >= pipesArray[index].x &&
+      (character.x + bird.width >= pipesArray[index].x &&
         character.x <= pipesArray[index].x + pipeUp.width &&
         (character.y <= pipesArray[index].y + pipeUp.height ||
           character.y + bird.height >= pipesArray[index].y + nextPipe)) ||
-      !DEV_MODE && character.y + bird.height >= ctx.canvas.height - ground.height
+      character.y + bird.height >= ctx.canvas.height - ground.height
     ) {
       location.reload();
       break;
@@ -114,23 +111,20 @@ function loop() {
   }
 
   // Conditions
-  if (!DEV_MODE) {
-    character.y += gravity;
-  }
+  character.y += gravity;
 
   // Score
   ctx.fillStyle = "rgba(0,0,0,1)";
   ctx.font = "3.5rem Barber";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  
+
   ctx.fillStyle = "black";
   ctx.fillText(score, ctx.canvas.width / 2, ctx.canvas.height - 40);
-  
+
   ctx.font = "3.5rem Barber-Fill";
   ctx.fillStyle = "white";
   ctx.fillText(score, ctx.canvas.width / 2, ctx.canvas.height - 40);
-  
 }
 
 // Events
